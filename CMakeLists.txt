@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-project(cadexchanger_interview)
+project(cadexchanger_interview VERSION 0.2 LANGUAGES CXX)
 
 
 add_library(mycadlib SHARED mycadlib.cpp)
