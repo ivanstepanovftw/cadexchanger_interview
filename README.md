@@ -13,9 +13,7 @@ Design a small program in C++ that would implement the following:
 5. Sort the second container in the ascending order of circles’ radii. That is, the first element has the
    smallest radius, the last - the greatest.
 6. Compute the total sum of radii of all curves in the second container
-
-Additional optional requirements:
-7. Split implementation into a library of curves and executable which uses API of this library.
+7. (Additional) Split implementation into a library of curves and executable which uses API of this library.
 
 Expectations to the implementation:
 1. The implementation must use virtual methods.
@@ -46,11 +44,23 @@ Curve definitions:
 ```bash
 mkdir cmake-build-gcc && cd cmake-build-gcc \
  && /sbin/cmake -DCMAKE_CXX_COMPILER=/sbin/g++ -G "CodeBlocks - Unix Makefiles" .. \
- && /sbin/cmake --build . --target mcl_test -- -j 6 \
+ && /sbin/cmake --build . --target mcl_test \
  && ./mcl_test
 ```
 
+#### Example output
+[mcl_test.out](./mcl_test.out)
 
 #### Author: Ivan Stepanov 
 
-#### License: The Unlicense
+#### License: [The Unlicense](./LICENSE.md)
+
+# Code review notes
+
+1. Base class that have derived classes should have virtual destructor (`-Werror=non-virtual-dtor`). Use virtual destructor everywhere.
+1. Prefer dynamic_cast instead of typeid. Dynamic cast will not work properly w/o virtual destructor.
+1. Use [dynamic_pointer_cast](https://en.cppreference.com/w/cpp/memory/shared_ptr/pointer_cast) instead of `get`.
+1. Use of `str` method inside `operator <<` is overhead. Creating new instances of stringstream causes performance drop.
+1. Use `make_shared` whenever when possible.
+1. `uniform_real_distribution` can return zero (Use some kind of epsilon, e.g. [subnormal value](https://en.wikipedia.org/wiki/Denormal_number)).
+1. Compiler flags should be platform-independent

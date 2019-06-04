@@ -1,0 +1,61 @@
+/home/user/github.com/ivanstepanovftw/cadexchanger_interview/.cmake-build-gcc-release/mcl_test
+15circle3_coloredIdE
+  ellipse3
+  circle3
+  circle3_colored
+15circle3_coloredIdE
+  ellipse3
+  circle3
+  circle3_colored
+15circle3_coloredIdE
+  ellipse3
+  circle3
+  circle3_colored
+7circle3IdE
+  ellipse3
+  circle3
+7circle3IdE
+  ellipse3
+  circle3
+7circle3IdE
+  ellipse3
+  circle3
+15circle3_coloredIdE
+  ellipse3
+  circle3
+  circle3_colored
+8ellipse3IdE
+  ellipse3
+7circle3IdE
+  ellipse3
+  circle3
+8ellipse3IdE
+  ellipse3
+8ellipse3IdE
+  ellipse3
+8ellipse3IdE
+  ellipse3
+6helix3IdE
+  helix3
+6helix3IdE
+  helix3
+curves: 14, ellipses: 12, circles: 8, helices: 2, circles_colored: 4
+15circle3_coloredIdE: C(t)={3.52,1.18,0.00}, dC(t)/dt={-2.04,2.04,0.00}, where t=PI/4
+15circle3_coloredIdE: C(t)={-1.91,9.54,0.00}, dC(t)/dt={-4.52,4.52,0.00}, where t=PI/4
+15circle3_coloredIdE: C(t)={8.46,13.12,0.00}, dC(t)/dt={-5.81,5.81,0.00}, where t=PI/4
+7circle3IdE: C(t)={5.46,-0.32,0.00}, dC(t)/dt={-4.37,4.37,0.00}, where t=PI/4
+7circle3IdE: C(t)={9.37,-2.81,0.00}, dC(t)/dt={-4.65,4.65,0.00}, where t=PI/4
+7circle3IdE: C(t)={1.89,10.34,0.00}, dC(t)/dt={-6.53,6.53,0.00}, where t=PI/4
+15circle3_coloredIdE: C(t)={-4.15,-2.85,0.00}, dC(t)/dt={-5.26,5.26,0.00}, where t=PI/4
+8ellipse3IdE: C(t)={2.78,3.00,0.00}, dC(t)/dt={-3.26,0.71,0.00}, where t=PI/4
+7circle3IdE: C(t)={9.09,0.98,0.00}, dC(t)/dt={-0.54,0.54,0.00}, where t=PI/4
+8ellipse3IdE: C(t)={5.44,7.50,0.00}, dC(t)/dt={-3.65,2.48,0.00}, where t=PI/4
+8ellipse3IdE: C(t)={2.62,2.07,0.00}, dC(t)/dt={-3.91,3.30,0.00}, where t=PI/4
+8ellipse3IdE: C(t)={1.69,-9.00,0.00}, dC(t)/dt={-5.92,0.25,0.00}, where t=PI/4
+6helix3IdE: C(t)={4.24,-0.03,-5.74}, dC(t)/dt={-1.71,1.71,1.57}, where t=PI/4
+6helix3IdE: C(t)={-3.99,3.97,2.85}, dC(t)/dt={-2.99,2.99,1.41}, where t=PI/4
+first: 0.76, last: 9.23
+total sum of radii: 47.68
+a: {-3.20,-0.72,8.52}, b: {-3.20,-0.72,8.52}
+
+Process finished with exit code 0

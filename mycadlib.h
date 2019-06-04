@@ -28,7 +28,7 @@ public:
     }
 
     friend std::ostream &operator<<(std::ostream &os, const vector3 &rhs) {
-        os << rhs.str();
+        os << "{" << rhs.x << "," << rhs.y << "," << rhs.z << "}";
         return os;
     }
 };
@@ -39,6 +39,8 @@ class curve3 {
 public:
     curve3(T x, T y, T z)
             : position(x, y, z) {}
+
+    virtual ~curve3() = default;
 
     virtual vector3<T> calculate(double angle) const = 0;
 
