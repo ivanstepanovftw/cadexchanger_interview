@@ -51,7 +51,7 @@ int main() {
     }
 
     /// Populate a second container that would contain only circles from the first container
-    std::vector<circle3<space_type> *> circles;
+    std::vector<std::shared_ptr<circle3<space_type>>> circles;
     size_t c_ellipse = 0;
     size_t c_circle = 0;
     size_t c_helix = 0;
@@ -62,10 +62,10 @@ int main() {
             cout<<"  ellipse3"<<endl;
             c_ellipse++;
         }
-        if (dynamic_pointer_cast<circle3<space_type>>(curve_p)) {
+        if (auto circle = dynamic_pointer_cast<circle3<space_type>>(curve_p)) {
             cout<<"  circle3"<<endl;
             c_circle++;
-            circles.push_back(dynamic_cast<circle3<space_type> *>(curve_p.get()));
+            circles.push_back(circle);
             if (&circles.back()->position != &curve_p.get()->position)
                 throw std::runtime_error("Make sure the second container shares (i.e. not clones) circles of the first one");
         }
@@ -89,9 +89,8 @@ int main() {
         auto *curve = curve_p.get();
         cout<< typeid(*curve).name()<<": C(t)="<<curve->calculate(M_PIl/4)<<", dC(t)/dt="<<curve->derivative(M_PIl/4)<<", where t=PI/4"<<endl;
     }
-
     /// Sort the second container in the ascending order of circles’ radii
-    std::sort(circles.begin(), circles.end(), [](circle3<space_type> *lhs, circle3<space_type> *rhs) {
+    std::sort(circles.begin(), circles.end(), [](std::shared_ptr<circle3<space_type>> &lhs, std::shared_ptr<circle3<space_type>> &rhs) {
         return lhs->a < rhs->a;
     });
 
@@ -100,8 +99,10 @@ int main() {
 
     /// Compute the total sum of radii of all curves in the second container
     space_type radii_sum = 0;
-    for(const auto& circle_p : circles)
+    for(const auto& circle_p : circles) {
         radii_sum += circle_p->a;
+        cout<<"  circle radii: "<<circle_p->a<<endl;
+    }
     cout<<"total sum of radii: "<<radii_sum<<endl;
 
     /// any point on helix satisfies the condition C(t + 2*PI) = C(t) + {0, 0, step}.

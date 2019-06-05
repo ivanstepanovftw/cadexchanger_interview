@@ -62,5 +62,6 @@ mkdir cmake-build-gcc && cd cmake-build-gcc \
 1. Use [dynamic_pointer_cast](https://en.cppreference.com/w/cpp/memory/shared_ptr/pointer_cast) instead of `get`.
 1. Use of `str` method inside `operator <<` is overhead. Creating new instances of stringstream causes performance drop.
 1. Use `make_shared` whenever when possible.
+1. Use `shared_ptr` instead of raw pointer to an object inside container.
 1. `uniform_real_distribution` can return zero (Use some kind of epsilon, e.g. [subnormal value](https://en.wikipedia.org/wiki/Denormal_number)).
 1. Compiler flags should be platform-independent
